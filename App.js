@@ -9,7 +9,15 @@
 
 import React, { Component } from 'react';
 import { Platform, StyleSheet, View } from 'react-native';
-import { Container, Header, Content, Button, Text } from 'native-base';
+import {
+  Container,
+  Header,
+  Content,
+  Button,
+  Text,
+  List,
+  ListItem
+} from 'native-base';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -24,9 +32,17 @@ export default class App extends Component {
       <Container>
         <Header />
         <Content>
-          <Button full light>
-            <Text>Light</Text>
-          </Button>
+          <List>
+            <ListItem>
+              <Text>UI Components</Text>
+            </ListItem>
+            <ListItem>
+              <Text>Networking & Storage</Text>
+            </ListItem>
+            <ListItem>
+              <Text>Common Errors</Text>
+            </ListItem>
+          </List>
         </Content>
       </Container>
     );

@@ -51,8 +51,12 @@ class CardDisplay extends Component {
               </Right>
             </CardItem>
             <CardItem>
-              <Icon active name="address" />
-              <Text>Card Showcase</Text>
+              <Icon name="address" />
+              <Text
+                onPress={() => this.props.navigation.navigate('CardShowcase')}
+              >
+                Card Showcase
+              </Text>
               <Right style={{ flex: 1 }}>
                 <Icon name="arrow-forward" />
               </Right>

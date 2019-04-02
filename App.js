@@ -23,6 +23,7 @@ import {
 } from 'native-base';
 import CardDisplay from './components/presentational/CardDisplay';
 import CardImage from './components/presentational/CardImage';
+import CardShowcase from './components/presentational/CardShowcase';
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
   android:
@@ -92,6 +93,9 @@ const AppNavigator = createStackNavigator(
     },
     CardImage: {
       screen: CardImage
+    },
+    CardShowcase: {
+      screen: CardShowcase
     }
   },
   {

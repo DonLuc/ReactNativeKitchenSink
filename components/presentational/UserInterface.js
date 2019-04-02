@@ -11,6 +11,7 @@ import {
   Icon,
   Text
 } from 'native-base';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 class UserInterface extends Component {
   render() {
@@ -18,18 +19,29 @@ class UserInterface extends Component {
       <Container>
         <Header>
           <Left style={styles.backIcon}>
-            <Button transparent>
+            <Button
+              transparent
+              onPress={() => {
+                this.props.navigation.navigate('Home');
+              }}
+            >
               <Icon name="arrow-back" />
             </Button>
           </Left>
         </Header>
         <Content>
           <List>
-            <ListItem>
+            <ListItem
+              onPress={() => this.props.navigation.navigate('Accordion')}
+            >
               <Text>Accordion</Text>
             </ListItem>
-            <ListItem>
-              <Text>Action Sheet</Text>
+            <ListItem
+              onPress={() => {
+                this.props.navigation.navigate('Card');
+              }}
+            >
+              <Text>Card</Text>
             </ListItem>
             <ListItem>
               <Text>Deck Swiper</Text>
@@ -50,4 +62,19 @@ const styles = StyleSheet.create({
   }
 });
 
+/* 
+const AppNavigator = createStackNavigator(
+  {
+    Home: {
+      screen: App
+    }
+  },
+  {
+    headerMode: 'none',
+    navigationOptions: {
+      headerVisible: false
+    }
+  }
+);
+*/
 export default UserInterface;

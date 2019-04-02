@@ -9,6 +9,7 @@
 
 import React, { Component } from 'react';
 import { Platform, StyleSheet, View } from 'react-native';
+import AccordionDisplay from './components/presentational/AccordionDisplay';
 import UserInterface from './components/presentational/UserInterface';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import {
@@ -20,6 +21,7 @@ import {
   List,
   ListItem
 } from 'native-base';
+import CardDisplay from './components/presentational/CardDisplay';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -81,6 +83,12 @@ const AppNavigator = createStackNavigator(
     },
     UI: {
       screen: UserInterface
+    },
+    Accordion: {
+      screen: AccordionDisplay
+    },
+    Card: {
+      screen: CardDisplay
     }
   },
   {

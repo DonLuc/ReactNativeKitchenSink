@@ -10,7 +10,7 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, View } from 'react-native';
 import UserInterface from './components/presentational/UserInterface';
-
+import { createStackNavigator, createAppContainer } from 'react-navigation';
 import {
   Container,
   Header,
@@ -28,14 +28,18 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu'
 });
 
-export default class App extends Component {
+class App extends Component {
   render() {
     return (
       <Container>
         <Header />
         <Content>
           <List>
-            <ListItem>
+            <ListItem
+              onPress={() => {
+                this.props.navigation.navigate('UI');
+              }}
+            >
               <Text>UI Components</Text>
             </ListItem>
             <ListItem>
@@ -69,3 +73,21 @@ const styles = StyleSheet.create({
     marginBottom: 5
   }
 });
+
+const AppNavigator = createStackNavigator(
+  {
+    Home: {
+      screen: App
+    },
+    UI: {
+      screen: UserInterface
+    }
+  },
+  {
+    headerMode: 'none',
+    navigationOptions: {
+      headerVisible: false
+    }
+  }
+);
+export default createAppContainer(AppNavigator);

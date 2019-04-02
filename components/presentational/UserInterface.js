@@ -1,13 +1,23 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
-import { List, ListItem, Container, Content, Header } from 'native-base';
+import { StyleSheet } from 'react-native';
+import {
+  List,
+  Button,
+  Left,
+  ListItem,
+  Container,
+  Content,
+  Header,
+  Icon,
+  Text
+} from 'native-base';
 
 class UserInterface extends Component {
   render() {
     return (
       <Container>
         <Header>
-          <Left>
+          <Left style={styles.backIcon}>
             <Button transparent>
               <Icon name="arrow-back" />
             </Button>
@@ -33,5 +43,11 @@ class UserInterface extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  backIcon: {
+    flex: 1
+  }
+});
 
 export default UserInterface;

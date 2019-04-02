@@ -22,7 +22,7 @@ import {
   ListItem
 } from 'native-base';
 import CardDisplay from './components/presentational/CardDisplay';
-
+import CardImage from './components/presentational/CardImage';
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
   android:
@@ -89,6 +89,9 @@ const AppNavigator = createStackNavigator(
     },
     Card: {
       screen: CardDisplay
+    },
+    CardImage: {
+      screen: CardImage
     }
   },
   {

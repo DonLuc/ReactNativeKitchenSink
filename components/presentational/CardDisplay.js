@@ -14,6 +14,10 @@ import {
   CardItem,
   Icon
 } from 'native-base';
+import {
+  TouchableHighlight,
+  TouchableNativeFeedback
+} from 'react-native-gesture-handler';
 
 class CardDisplay extends Component {
   render() {
@@ -35,7 +39,13 @@ class CardDisplay extends Component {
           <Card>
             <CardItem>
               <Icon active name="address" />
-              <Text>Card Image</Text>
+              <Text
+                onPress={() => {
+                  this.props.navigation.navigate('CardImage');
+                }}
+              >
+                Card Image
+              </Text>
               <Right style={{ flex: 1 }}>
                 <Icon name="arrow-forward" />
               </Right>

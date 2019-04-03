@@ -24,6 +24,9 @@ import {
 import CardDisplay from './components/presentational/CardDisplay';
 import CardImage from './components/presentational/CardImage';
 import CardShowcase from './components/presentational/CardShowcase';
+import Networking from './components/presentational/Networking';
+import FetchComponent from './components/presentational/FetchComponent';
+
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
   android:
@@ -45,7 +48,11 @@ class App extends Component {
             >
               <Text>UI Components</Text>
             </ListItem>
-            <ListItem>
+            <ListItem
+              onPress={() => {
+                this.props.navigation.navigate('Networking');
+              }}
+            >
               <Text>Networking & Storage</Text>
             </ListItem>
             <ListItem>
@@ -96,6 +103,12 @@ const AppNavigator = createStackNavigator(
     },
     CardShowcase: {
       screen: CardShowcase
+    },
+    Networking: {
+      screen: Networking
+    },
+    FetchComponent: {
+      screen: FetchComponent
     }
   },
   {

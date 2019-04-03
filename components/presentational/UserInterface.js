@@ -47,6 +47,9 @@ class UserInterface extends Component {
               <Text>Deck Swiper</Text>
             </ListItem>
             <ListItem>
+              <Text>Activity Indicator</Text>
+            </ListItem>
+            <ListItem>
               <Text>Footer Tabs</Text>
             </ListItem>
           </List>
